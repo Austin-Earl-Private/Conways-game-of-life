@@ -1,0 +1,64 @@
+import pyray
+
+
+class KeyboardService:
+    """Detects player input. 
+    
+    The responsibility of a KeyboardService is to indicate whether or not a key is up or down.
+
+    Attributes:
+        _keys (Dict[string, int]): The letter to key mapping.
+    """
+
+    def __init__(self):
+        """Constructs a new KeyboardService."""
+        self._keys = {}
+
+        self._keys['w'] = pyray.KEY_W
+        self._keys['a'] = pyray.KEY_A
+        self._keys['s'] = pyray.KEY_S
+        self._keys['d'] = pyray.KEY_D
+
+        self._keys['i'] = pyray.KEY_I
+        self._keys['j'] = pyray.KEY_J
+        self._keys['k'] = pyray.KEY_K
+        self._keys['l'] = pyray.KEY_L
+        self._keys['g'] = pyray.KEY_G
+        self._keys['space'] = pyray.KEY_SPACE
+
+        self._key_state = {}
+
+    def is_key_up(self, key):
+        """Checks if the given key is currently up.
+        
+        Args:
+            key (string): The given key (w, a, s, d or i, j, k, l)
+        """
+        pyray_key = self._keys[key.lower()]
+        return pyray.is_key_up(pyray_key)
+
+    def is_key_down(self, key):
+        """Checks if the given key is currently down.
+        
+        Args:
+            key (string): The given key (w, a, s, d or i, j, k, l)
+        """
+        pyray_key = self._keys[key.lower()]
+        return pyray.is_key_down(pyray_key)
+
+    def key_released(self, key):
+        if key not in self._key_state:
+            if self.is_key_up(key):
+                self._key_state[key] = "up"
+            else:
+                self._key_state[key] = "down"
+        if self._key_state[key] == "up" and self.is_key_down(key):
+            #     we just went down
+            self._key_state[key] = "down"
+            return False
+        elif self._key_state[key] == "down" and self.is_key_up(key):
+            #     just released
+            self._key_state[key] = "up"
+            return True
+        else:
+            return False
