@@ -1,23 +1,22 @@
-from life import constants
-from life.game.casting.actor import Actor
-from life.game.casting.cast import Cast
-from life.game.casting.cell import Cell
-from life.game.casting.global_state import GlobalState
-from life.game.casting.grid import Grid
-from life.game.casting.grid_hud import GridHUD
-from life.game.casting.hud import HUD
-from life.game.casting.paused_hud import PausedHUD
-from life.game.directing.director import Director
-from life.game.scripting.add_actors_action import AddActorsAction
-from life.game.scripting.control_actors_action import ControlActorsAction
-from life.game.scripting.draw_actors_action import DrawActorsAction
-from life.game.scripting.move_actors_action import MoveActorsAction
-from life.game.scripting.script import Script
-from life.game.scripting.update_hud_action import UpdateHUDAction
-from life.game.services.keyboard_service import KeyboardService
-from life.game.services.mouse_service import MouseService
-from life.game.services.video_service import VideoService
-from life.game.shared.point import Point
+import constants
+from game.casting.cast import Cast
+from game.casting.cell import Cell
+from game.casting.global_state import GlobalState
+from game.casting.grid import Grid
+from game.casting.grid_hud import GridHUD
+from game.casting.hud import HUD
+from game.casting.paused_hud import PausedHUD
+from game.directing.director import Director
+from game.scripting.add_actors_action import AddActorsAction
+from game.scripting.control_actors_action import ControlActorsAction
+from game.scripting.draw_actors_action import DrawActorsAction
+from game.scripting.move_actors_action import MoveActorsAction
+from game.scripting.script import Script
+from game.scripting.update_hud_action import UpdateHUDAction
+from game.services.keyboard_service import KeyboardService
+from game.services.mouse_service import MouseService
+from game.services.video_service import VideoService
+from game.shared.point import Point
 
 
 def main():
@@ -50,14 +49,6 @@ def main():
     hud.add_hud("pause", paused_hud)
     hud.add_hud("grid", grid_hud)
     cast.add_actor("hud", hud)
-
-    # cast.add_actor("players", Cycle(Point(third_width, half_height), constants.RED, 1))
-
-    # p2_score = Score()
-    # p2_score.set_position(Point(third_width * 2, 0))
-    # cast.add_actor("scores", Score())
-    # cast.add_actor("scores", p2_score)
-
     script = Script()
     script.add_action("input", ControlActorsAction(keyboard_service))
     script.add_action("update", UpdateHUDAction())

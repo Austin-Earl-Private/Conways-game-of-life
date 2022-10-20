@@ -1,4 +1,4 @@
-from life.game.casting.hud_actor import HudActor
+from game.casting.hud_actor import HudActor
 
 
 class PausedHUD(HudActor):

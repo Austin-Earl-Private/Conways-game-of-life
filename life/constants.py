@@ -1,4 +1,4 @@
-from life.game.shared.color import Color
+from game.shared.color import Color
 
 COLUMNS = 60
 ROWS = 38

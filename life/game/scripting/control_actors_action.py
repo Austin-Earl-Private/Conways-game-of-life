@@ -1,6 +1,6 @@
-from life.game.scripting.action import Action
-from life.game.casting.global_state import GlobalState
-from life.game.services.keyboard_service import KeyboardService
+from game.scripting.action import Action
+from game.casting.global_state import GlobalState
+from game.services.keyboard_service import KeyboardService
 
 
 class ControlActorsAction(Action):

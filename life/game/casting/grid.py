@@ -1,9 +1,9 @@
 from typing import List
 
-from life import constants
-from life.game.casting.actor import Actor
-from life.game.casting.cell import Cell
-from life.game.shared.point import Point
+import constants
+from game.casting.actor import Actor
+from game.casting.cell import Cell
+from game.shared.point import Point
 
 
 def _get_grid_pos_from_point(point)->str:

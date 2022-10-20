@@ -1,6 +1,6 @@
-from life import constants
-from life.game.casting.actor import Actor
-from life.game.shared.color import Color
+import constants
+from game.casting.actor import Actor
+from game.shared.color import Color
 
 
 class Cell(Actor):

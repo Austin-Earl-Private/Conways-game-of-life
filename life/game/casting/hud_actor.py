@@ -1,4 +1,4 @@
-from life.game.casting.actor import Actor
+from game.casting.actor import Actor
 
 
 class HudActor(Actor):

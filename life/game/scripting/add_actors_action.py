@@ -1,7 +1,7 @@
-from life.game.casting.cast import Cast
-from life.game.casting.grid import Grid
-from life.game.scripting.action import Action
-from life.game.services.mouse_service import MouseService
+from game.casting.cast import Cast
+from game.casting.grid import Grid
+from game.scripting.action import Action
+from game.services.mouse_service import MouseService
 
 
 class AddActorsAction(Action):

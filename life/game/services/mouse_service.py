@@ -1,8 +1,8 @@
 import pyray
 
-from life import constants
-from life.constants import MAX_X, MAX_Y
-from life.game.shared.point import Point
+import constants
+from constants import MAX_X, MAX_Y
+from game.shared.point import Point
 
 
 def _clamp(n, smallest, largest):

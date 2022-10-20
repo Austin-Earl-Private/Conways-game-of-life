@@ -1,9 +1,9 @@
-from life.game.scripting.action import Action
-from life.game.casting.cell import Cell
+from game.scripting.action import Action
+from game.casting.cell import Cell
 from typing import List
 
-from life.game.casting.grid import Grid
-from life.game.shared.point import Point
+from game.casting.grid import Grid
+from game.shared.point import Point
 
 
 class MoveActorsAction(Action):

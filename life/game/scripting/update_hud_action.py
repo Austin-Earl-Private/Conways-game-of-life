@@ -1,6 +1,6 @@
-from life.game.casting.global_state import GlobalState
-from life.game.casting.hud import HUD
-from life.game.scripting.action import Action
+from game.casting.global_state import GlobalState
+from game.casting.hud import HUD
+from game.scripting.action import Action
 
 
 class UpdateHUDAction(Action):

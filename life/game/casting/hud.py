@@ -1,7 +1,7 @@
 from typing import List
 
-from life.game.casting.actor import Actor
-from life.game.casting.hud_actor import HudActor
+from game.casting.actor import Actor
+from game.casting.hud_actor import HudActor
 
 
 class HUD(Actor):

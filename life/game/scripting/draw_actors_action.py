@@ -1,10 +1,10 @@
-from life.game.casting.global_state import GlobalState
-from life.game.casting.hud import HUD
-from life.game.scripting.action import Action
-from life import constants
-from life.game.casting.cast import Cast
-from life.game.services.video_service import VideoService
-from life.game.shared.point import Point
+from game.casting.global_state import GlobalState
+from game.casting.hud import HUD
+from game.scripting.action import Action
+import constants
+from game.casting.cast import Cast
+from game.services.video_service import VideoService
+from game.shared.point import Point
 
 
 class DrawActorsAction(Action):
